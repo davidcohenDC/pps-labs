@@ -1,5 +1,7 @@
 package lab01.example.model;
 
+import lab01.example.utils.FeeUtils;
+
 /**
  * This class represent a particular instance of a BankAccount.
  * In particular, a Simple Bank Account allows always the deposit
@@ -28,6 +30,7 @@ public class SimpleBankAccount implements BankAccount {
     public void deposit(final int userID, final double amount) {
         if (checkUser(userID)) {
             this.balance += amount;
+            this.balance = FeeUtils.applyingFee(this,balance);
         }
     }
 
@@ -35,6 +38,7 @@ public class SimpleBankAccount implements BankAccount {
     public void withdraw(final int userID, final double amount) {
         if (checkUser(userID) && isWithdrawAllowed(amount)) {
             this.balance -= amount;
+            this.balance = FeeUtils.applyingFee(this,balance);
         }
     }
 
