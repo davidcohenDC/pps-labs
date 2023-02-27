@@ -2,12 +2,12 @@ package lab01.tdd;
 
 import java.util.*;
 
-public class CircularListImpl implements CircularList {
+public class BasicCircularList implements CircularList {
 
     private final List<Optional<Integer>> list;
     private int actualIndex = 0;
 
-    public CircularListImpl() {
+    public BasicCircularList() {
         this.list = new LinkedList<>();
     }
 
@@ -31,8 +31,7 @@ public class CircularListImpl implements CircularList {
         if(list.isEmpty()) {
             return Optional.empty();
         }
-        actualIndex += 1;
-        correctBounds();
+        this.incrementIndex();
         return list.get(actualIndex);
 
     }
@@ -42,8 +41,7 @@ public class CircularListImpl implements CircularList {
         if(list.isEmpty()) {
             return Optional.empty();
         }
-        actualIndex -= 1;
-        correctBounds();
+       this.decrementIndex();
         return list.get(actualIndex);
     }
 
@@ -53,12 +51,17 @@ public class CircularListImpl implements CircularList {
         this.actualIndex = 0;
     }
 
-    private void correctBounds() {
+    private void incrementIndex() {
+        actualIndex += 1;
         if(actualIndex >= list.size()) {
             actualIndex = 0;
-        } else if (actualIndex < 0) {
+        }
+    }
+
+    private void decrementIndex() {
+        this.actualIndex -= 1;
+        if (actualIndex < 0) {
             actualIndex = list.size()-1;
         }
-
     }
 }
