@@ -1,5 +1,7 @@
-import lab01.tdd.CircularList;
-import lab01.tdd.BasicCircularList;
+package exercise1;
+
+import lab01.tdd.exercise1.CircularList;
+import lab01.tdd.exercise1.BasicCircularList;
 import org.junit.jupiter.api.Assertions;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
@@ -76,7 +78,7 @@ public class CircularListTest {
     void cycleSingleElementBackwards() {
         circularList.add(FIRST_ELEM);
         for (int i = 0; i < 100; i++) {
-            assertEquals(Optional.of(FIRST_ELEM),circularList.next());
+            assertEquals(Optional.of(FIRST_ELEM),circularList.previous());
         }
     }
 
@@ -84,7 +86,7 @@ public class CircularListTest {
     void cycleElementsBackwards() {
         this.populateList();
         for (int i = 0; i < circularList.size(); i++) {
-            circularList.next();
+            circularList.previous();
         }
         assertEquals(Optional.of(SECOND_ELEM),circularList.next());
     }
@@ -92,15 +94,22 @@ public class CircularListTest {
     @Test
     void clearList() {
         this.populateList();
+        circularList.next();
+        circularList.next();
+        circularList.next();
+        circularList.previous();
         circularList.reset();
-        assertEquals(0, circularList.size());
+        assertEquals(Optional.of(SECOND_ELEM), circularList.next());
     }
 
-
     @Test
-    void checkIfEmpty() {
-        this.clearList();
-        assertTrue(circularList.isEmpty());
+    void cycleBackAndForward() {
+        this.populateList();
+        for (int i = 0; i < circularList.size(); i++) {
+            circularList.next();
+            circularList.previous();
+        }
+        assertEquals(Optional.of(SECOND_ELEM),circularList.next());
     }
 
     @Disabled

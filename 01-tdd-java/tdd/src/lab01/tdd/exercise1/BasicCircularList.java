@@ -1,4 +1,4 @@
-package lab01.tdd;
+package lab01.tdd.exercise1;
 
 import java.util.*;
 
@@ -47,7 +47,6 @@ public class BasicCircularList implements CircularList {
 
     @Override
     public void reset() {
-        this.list.clear();
         this.actualIndex = 0;
     }
 
