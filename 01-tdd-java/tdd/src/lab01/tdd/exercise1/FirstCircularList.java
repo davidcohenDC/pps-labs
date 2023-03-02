@@ -2,12 +2,12 @@ package lab01.tdd.exercise1;
 
 import java.util.*;
 
-public class BasicCircularList implements CircularList {
+public class FirstCircularList implements CircularList {
 
     private final List<Optional<Integer>> list;
     private int actualIndex = 0;
 
-    public BasicCircularList() {
+    public FirstCircularList() {
         this.list = new LinkedList<>();
     }
 

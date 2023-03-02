@@ -1,50 +1,30 @@
 package exercise1;
 
 import lab01.tdd.exercise1.CircularList;
-import lab01.tdd.exercise1.BasicCircularList;
-import org.junit.jupiter.api.Assertions;
+import lab01.tdd.exercise1.FirstCircularList;
+
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 /**
  * The test suite for testing the CircularList implementation
  */
-public class CircularListTest {
+public class FirstCircularListTest extends BasicFirstCircularListTest {
 
-    private CircularList circularList;
-
-    private static final int FIRST_ELEM = 9;
-    private static final int SECOND_ELEM = 3;
-
-    private static final int LAST_ELEM = 4;
-
-    private List<Integer> elements;
-
-    private void populateList() {
-        this.elements = new ArrayList<>(List.of(FIRST_ELEM,SECOND_ELEM,7,2,7,8,LAST_ELEM));
-        for (Integer element : elements) {
-            circularList.add(element);
-        }
-    }
-
+    @Override
     @BeforeEach
     void beforeEach() {
-        this.circularList = new BasicCircularList();
-
+        this.circularList = new FirstCircularList();
     }
 
     @Test
-    void addElement() {
+    void prevElement() {
         this.populateList();
-        assertEquals(elements.size(),circularList.size());
+        assertEquals(Optional.of(LAST_ELEM),circularList.previous());
     }
-
     @Test
     void nextElement() {
         this.populateList();
@@ -66,12 +46,6 @@ public class CircularListTest {
             circularList.next();
         }
         assertEquals(Optional.of(SECOND_ELEM),circularList.next());
-    }
-
-    @Test
-    void prevElement() {
-        this.populateList();
-        assertEquals(Optional.of(LAST_ELEM),circularList.previous());
     }
 
     @Test
@@ -106,15 +80,9 @@ public class CircularListTest {
     void cycleBackAndForward() {
         this.populateList();
         for (int i = 0; i < circularList.size(); i++) {
-            circularList.next();
             circularList.previous();
+            circularList.next();
         }
         assertEquals(Optional.of(SECOND_ELEM),circularList.next());
     }
-
-    @Disabled
-    @Test public void testTodo(){
-        Assertions.fail();
-    }
-
 }
