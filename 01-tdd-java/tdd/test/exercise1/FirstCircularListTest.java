@@ -1,8 +1,6 @@
 package exercise1;
 
-import lab01.tdd.exercise1.CircularList;
 import lab01.tdd.exercise1.FirstCircularList;
-
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -10,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import java.util.Optional;
 
 /**
- * The test suite for testing the CircularList implementation
+ * The test suite for testing the FirstCircularList implementation
  */
 public class FirstCircularListTest extends BasicFirstCircularListTest {
 

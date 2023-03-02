@@ -1,11 +1,10 @@
 package exercise3;
 
-import lab01.tdd.exercise2.SecondCircularList;
+
 import lab01.tdd.exercise3.CircularList;
 import lab01.tdd.exercise3.ThirdCircularList;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 import java.util.List;
 

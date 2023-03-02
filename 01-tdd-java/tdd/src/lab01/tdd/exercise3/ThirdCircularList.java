@@ -5,7 +5,7 @@ import java.util.function.Predicate;
 
 public class ThirdCircularList implements CircularList<Integer>{
 
-    private List<Integer> list;
+    private final List<Integer> list;
 
     public ThirdCircularList() {
         this.list = new ArrayList<>();

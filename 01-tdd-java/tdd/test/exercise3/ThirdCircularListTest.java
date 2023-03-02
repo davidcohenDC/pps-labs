@@ -4,7 +4,6 @@ import lab01.tdd.exercise3.ThirdCircularList;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-
 import java.util.Optional;
 
 public class ThirdCircularListTest extends BasicThirdCircularListTest{
