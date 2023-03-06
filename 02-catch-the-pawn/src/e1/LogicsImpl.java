@@ -3,19 +3,26 @@ package e1;
 import java.util.*;
 
 public class LogicsImpl implements Logics {
-	
+
+	public static final int DEFAULT_SIZE = 5;
+
 	private final Pair<Integer,Integer> pawn;
 	private Pair<Integer,Integer> knight;
 	private final Random random = new Random();
 	private final int size;
+
 	 
     public LogicsImpl(int size){
     	this.size = size;
         this.pawn = this.randomEmptyPosition();
         this.knight = this.randomEmptyPosition();	
     }
+
+	public LogicsImpl(){
+		this(DEFAULT_SIZE);
+	}
     
-	private final Pair<Integer,Integer> randomEmptyPosition(){
+	private Pair<Integer,Integer> randomEmptyPosition(){
     	Pair<Integer,Integer> pos = new Pair<>(this.random.nextInt(size),this.random.nextInt(size));
     	// the recursive call below prevents clash with an existing pawn
     	return this.pawn!=null && this.pawn.equals(pos) ? randomEmptyPosition() : pos;
@@ -44,5 +51,17 @@ public class LogicsImpl implements Logics {
 	@Override
 	public boolean hasPawn(int row, int col) {
 		return this.pawn.equals(new Pair<>(row,col));
+	}
+
+	public Pair<Integer, Integer> getPawn() {
+		return pawn;
+	}
+
+	public Pair<Integer, Integer> getKnight() {
+		return knight;
+	}
+
+	public void setKnight(Pair<Integer, Integer> knight) {
+		this.knight = knight;
 	}
 }
