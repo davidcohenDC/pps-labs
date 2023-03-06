@@ -2,7 +2,6 @@ package e1;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -39,7 +38,7 @@ class LogicsTest {
 
 
     @Test
-    void testHasKnightCorrectly() {
+    void testNoMultipleKnight() {
         List<Boolean> heatMap = new ArrayList<>();
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++) {
@@ -51,7 +50,7 @@ class LogicsTest {
     }
 
     @Test
-    void testHasPawnCorrectly() {
+    void testNoMultiplePawn() {
         List<Boolean> heatMap = new ArrayList<>();
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++) {
@@ -63,9 +62,11 @@ class LogicsTest {
     }
 
     @Test
-    void testHit() {
-//        assertTrue(this.logics.hit(this.pawn.getX(),this.pawn.getY()));
-//        assertFalse(this.logics.hit(this.knight.getX(),this.knight.getY()));
+    void testWrongHitDirection() {
+        int newX = Math.abs((SIZE-this.knight.getX()-1));
+        int newY = Math.abs((SIZE-this.knight.getX()-1));
+        this.logics.hit(newX,newY);
+        assertNotEquals(Optional.of(new Pair<>(newX,newY)),getKnight());
     }
 
 
