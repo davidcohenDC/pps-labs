@@ -4,8 +4,6 @@ import java.util.*;
 
 public class LogicsImpl implements Logics {
 
-	public static final int DEFAULT_SIZE = 5;
-
 	private final Pair<Integer,Integer> pawn;
 	private Pair<Integer,Integer> knight;
 	private final Random random = new Random();
@@ -18,10 +16,12 @@ public class LogicsImpl implements Logics {
         this.knight = this.randomEmptyPosition();	
     }
 
-	public LogicsImpl(){
-		this(DEFAULT_SIZE);
+	public LogicsImpl(int size,Pair<Integer, Integer> pawn, Pair<Integer, Integer> knight) {
+		this.size = size;
+		this.pawn = pawn;
+		this.knight = knight;
 	}
-    
+
 	private Pair<Integer,Integer> randomEmptyPosition(){
     	Pair<Integer,Integer> pos = new Pair<>(this.random.nextInt(size),this.random.nextInt(size));
     	// the recursive call below prevents clash with an existing pawn
@@ -53,15 +53,4 @@ public class LogicsImpl implements Logics {
 		return this.pawn.equals(new Pair<>(row,col));
 	}
 
-	public Pair<Integer, Integer> getPawn() {
-		return pawn;
-	}
-
-	public Pair<Integer, Integer> getKnight() {
-		return knight;
-	}
-
-	public void setKnight(Pair<Integer, Integer> knight) {
-		this.knight = knight;
-	}
 }
