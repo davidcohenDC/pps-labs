@@ -4,7 +4,7 @@ public abstract class AbstractPawn implements Pawn{
 
     protected Pair<Integer,Integer> position;
 
-    public AbstractPawn(Pair<Integer, Integer> position) {
+    public AbstractPawn(Pair<Integer,Integer> position) {
         this.position = position;
     }
 
