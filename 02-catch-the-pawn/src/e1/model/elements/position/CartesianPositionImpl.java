@@ -1,6 +1,6 @@
-package e1.components.position;
+package e1.model.elements.position;
 
-import e1.Pair;
+import e1.model.elements.Pair;
 
 import java.util.Objects;
 

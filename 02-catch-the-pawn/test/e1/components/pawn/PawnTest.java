@@ -1,7 +1,10 @@
 package e1.components.pawn;
 
-import e1.components.position.CartesianPosition;
-import e1.components.position.CartesianPositionImpl;
+import e1.model.components.pawn.Pawn;
+import e1.model.components.pawn.PawnFactory;
+import e1.model.components.pawn.PawnFactoryImpl;
+import e1.model.elements.position.CartesianPosition;
+import e1.model.elements.position.CartesianPositionImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;

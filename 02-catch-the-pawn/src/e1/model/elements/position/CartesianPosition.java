@@ -1,4 +1,4 @@
-package e1.components.position;
+package e1.model.elements.position;
 public interface CartesianPosition<X> {
 
     X getX();

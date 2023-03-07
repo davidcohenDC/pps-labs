@@ -1,5 +1,8 @@
 package e1;
 
+import e1.controller.Logics;
+import e1.controller.LogicsImpl;
+import e1.model.elements.Pair;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;

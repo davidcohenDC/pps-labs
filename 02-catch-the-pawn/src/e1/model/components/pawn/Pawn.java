@@ -1,6 +1,6 @@
-package e1.components.pawn;
+package e1.model.components.pawn;
 
-import e1.components.position.CartesianPosition;
+import e1.model.elements.position.CartesianPosition;
 
 public interface Pawn {
 

@@ -1,4 +1,6 @@
-package e1;
+package e1.controller;
+
+import e1.model.elements.Pair;
 
 import java.util.*;
 
