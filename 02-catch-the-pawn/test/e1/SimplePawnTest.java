@@ -1,6 +1,8 @@
 package e1;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class SimplePawnTest extends PawnTest{
 
@@ -8,5 +10,12 @@ public class SimplePawnTest extends PawnTest{
     void setUp() {
         super.initFactory();
         this.pawn = this.pawnFactory.simplePawn();
+    }
+
+    @Test
+    void testSimpleMovement() {
+        Pair<Integer,Integer> position = new Pair<>(this.pawn.position().getX()+1,this.pawn.position().getY());
+        assertTrue(this.pawn.move(position.getX(),position.getY()));
+        assertEquals(this.pawn.position(),position);
     }
 }

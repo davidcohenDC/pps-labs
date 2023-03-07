@@ -11,10 +11,12 @@ public abstract class AbstractPawn implements Pawn {
     }
 
     @Override
-    public void move(int x, int y) {
+    public boolean move(int x, int y) {
         if(this.canMove(x,y)) {
             this.position = new Pair<>(x,y);
+            return true;
         }
+        return false;
     }
 
     @Override

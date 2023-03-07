@@ -4,7 +4,7 @@ import e1.Pair;
 
 public interface Pawn {
 
-    void move(int x, int y);
+    boolean move(int x, int y);
 
     Pair<Integer,Integer> position();
 }

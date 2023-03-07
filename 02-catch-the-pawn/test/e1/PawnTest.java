@@ -21,8 +21,7 @@ abstract class PawnTest {
     }
 
     @Test
-    void testInitialPosition() {
-        assertEquals(INITIAL_POSITION,this.pawn. position());
+    void testInitialStaticPosition() {
+        assertEquals(INITIAL_POSITION,this.pawn.position());
     }
-
 }
