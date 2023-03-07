@@ -14,4 +14,14 @@ public class PawnFactoryImpl implements PawnFactory {
             }
         };
     }
+
+    @Override
+    public Pawn knight() {
+        return new AbstractPawn(new Pair<>(0,0)) {
+            @Override
+            protected boolean canMove(int x, int y) {
+                return Math.abs(x)+Math.abs(y)==3;
+            }
+        };
+    }
 }
