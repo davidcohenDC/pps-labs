@@ -1,23 +1,25 @@
 package e1.components.pawn;
 
-import e1.Pair;
+import e1.components.position.CartesianPosition;
+import e1.components.position.CartesianPositionImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+
 public class KnightTest extends PawnTest{
 
     @BeforeEach
     void setUp() {
         super.initFactory();
-        this.pawn = this.pawnFactory.knight();
+        this.pawn = this.pawnFactory.knight(position);
     }
     @Test
     void testSimpleMovement() {
-        Pair<Integer,Integer> position = new Pair<>(this.pawn.position().getX()+1,this.pawn.position().getY()+2);
-        assertTrue(this.pawn.move(position.getX(),position.getY()));
-        assertEquals(this.pawn.position(),position);
+        CartesianPosition<Integer> newPosition = new CartesianPositionImpl(X+1,Y+2);
+        assertTrue(this.pawn.move(newPosition));
+        assertEquals(this.pawn.position(),newPosition);
     }
 }

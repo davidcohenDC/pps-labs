@@ -1,22 +1,21 @@
 package e1.components.pawn;
 
-import e1.components.position.Position;
-import e1.components.position.TwoDimensionalPosition;
+import e1.components.position.CartesianPosition;
+import e1.components.position.CartesianPositionImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 abstract class PawnTest {
 
-    private static final int X = 0;
-    private static final int Y = 0;
-
+    protected static final int X = 0;
+    protected static final int Y = 0;
 
     protected Pawn pawn;
 
     protected PawnFactory pawnFactory;
 
-    protected final Position initialPosition = new TwoDimensionalPosition<>(X,Y);
+    protected final CartesianPosition<Integer> position = new CartesianPositionImpl(X,Y);
 
     @BeforeEach
     void initFactory() {
@@ -25,6 +24,6 @@ abstract class PawnTest {
 
     @Test
     void testInitialStaticPosition() {
-        assertEquals(initialPosition.getCoordinates(),this.pawn.position());
+        assertEquals(position.getCoordinates(),this.pawn.position().getCoordinates());
     }
 }

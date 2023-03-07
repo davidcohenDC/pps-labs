@@ -1,26 +1,26 @@
 package e1.components.pawn;
 
 
-import e1.Pair;
+import e1.components.position.CartesianPosition;
 
 public class PawnFactoryImpl implements PawnFactory {
 
     @Override
-    public Pawn simplePawn() {
-        return new AbstractPawn(new Pair<>(0,0)) {
+    public Pawn simplePawn(CartesianPosition<Integer> position) {
+        return new AbstractPawn(position) {
             @Override
-            protected boolean canMove(int x, int y) {
-                return Math.abs(x)+Math.abs(y)==1;
+            protected boolean canMove(CartesianPosition<Integer> position) {
+                return Math.abs(position.getX())+Math.abs(position.getY())==1;
             }
         };
     }
 
     @Override
-    public Pawn knight() {
-        return new AbstractPawn(new Pair<>(0,0)) {
+    public Pawn knight(CartesianPosition<Integer> position) {
+        return new AbstractPawn(position) {
             @Override
-            protected boolean canMove(int x, int y) {
-                return Math.abs(x)+Math.abs(y)==3;
+            protected boolean canMove(CartesianPosition<Integer> position) {
+                return Math.abs(position.getX())+Math.abs(position.getY())==3;
             }
         };
     }

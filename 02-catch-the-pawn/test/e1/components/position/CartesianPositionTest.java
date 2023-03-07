@@ -5,17 +5,17 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-class TwoDimensionalPositionTest{
+class CartesianPositionTest {
 
     private static final int X = 0;
 
     private static final int Y = 0;
 
-    private TwoDimensionalPosition<Integer> twoDimensionalPosition;
+    private CartesianPosition<Integer> twoDimensionalPosition;
 
     @BeforeEach
     void setUp() {
-        this.twoDimensionalPosition = new TwoDimensionalPosition<>(X,Y);
+        this.twoDimensionalPosition = new CartesianPositionImpl(X,Y);
     }
 
     @Test

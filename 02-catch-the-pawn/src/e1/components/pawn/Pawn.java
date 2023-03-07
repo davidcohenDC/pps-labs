@@ -1,10 +1,10 @@
 package e1.components.pawn;
 
-import e1.Pair;
+import e1.components.position.CartesianPosition;
 
 public interface Pawn {
 
-    boolean move(int x, int y);
+    boolean move(CartesianPosition<Integer> position);
 
-    Pair<Integer,Integer> position();
+    CartesianPosition<Integer> position();
 }
