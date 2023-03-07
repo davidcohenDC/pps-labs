@@ -1,5 +1,8 @@
 package e1;
 
+import e1.components.pawn.Pawn;
+import e1.components.pawn.PawnFactory;
+import e1.components.pawn.PawnFactoryImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -19,7 +22,7 @@ abstract class PawnTest {
 
     @Test
     void testInitialPosition() {
-        assertEquals(INITIAL_POSITION,this.pawn.position());
+        assertEquals(INITIAL_POSITION,this.pawn. position());
     }
 
 }

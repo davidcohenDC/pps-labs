@@ -1,6 +1,8 @@
-package e1;
+package e1.components.pawn;
 
-public abstract class AbstractPawn implements Pawn{
+import e1.Pair;
+
+public abstract class AbstractPawn implements Pawn {
 
     protected Pair<Integer,Integer> position;
 
@@ -9,9 +11,9 @@ public abstract class AbstractPawn implements Pawn{
     }
 
     @Override
-    public void move() {
-        if(this.canMove()) {
-            this.onMove();
+    public void move(int x, int y) {
+        if(this.canMove(x,y)) {
+            this.position = new Pair<>(x,y);
         }
     }
 
@@ -20,9 +22,6 @@ public abstract class AbstractPawn implements Pawn{
         return this.position;
     }
 
-    protected abstract boolean canMove();
-
-    protected abstract void onMove();
-
+    protected abstract boolean canMove(int x, int y);
 
 }

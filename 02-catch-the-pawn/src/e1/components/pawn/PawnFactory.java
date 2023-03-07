@@ -1,4 +1,5 @@
-package e1;
+package e1.components.pawn;
+
 
 public interface PawnFactory {
 

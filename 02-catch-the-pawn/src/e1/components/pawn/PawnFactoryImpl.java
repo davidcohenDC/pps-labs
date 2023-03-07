@@ -1,5 +1,7 @@
-package e1;
+package e1.components.pawn;
 
+
+import e1.Pair;
 
 public class PawnFactoryImpl implements PawnFactory {
 
@@ -7,13 +9,8 @@ public class PawnFactoryImpl implements PawnFactory {
     public Pawn simplePawn() {
         return new AbstractPawn(new Pair<>(0,0)) {
             @Override
-            protected boolean canMove() {
-                return false;
-            }
-
-            @Override
-            protected void onMove() {
-
+            protected boolean canMove(int x, int y) {
+                return Math.abs(x)+Math.abs(y)==1;
             }
         };
     }
