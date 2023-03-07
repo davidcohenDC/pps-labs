@@ -1,13 +1,9 @@
-package e1;
+package e1.components.pawn;
 
-import e1.components.pawn.Pawn;
-import e1.components.pawn.PawnFactory;
-import e1.components.pawn.PawnFactoryImpl;
 import e1.components.position.Position;
-import e1.components.position.TwoDimensionalPositionImpl;
+import e1.components.position.TwoDimensionalPosition;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 abstract class PawnTest {
@@ -20,7 +16,7 @@ abstract class PawnTest {
 
     protected PawnFactory pawnFactory;
 
-    protected final Position initialPosition = new TwoDimensionalPositionImpl(X,Y);
+    protected final Position initialPosition = new TwoDimensionalPosition<>(X,Y);
 
     @BeforeEach
     void initFactory() {

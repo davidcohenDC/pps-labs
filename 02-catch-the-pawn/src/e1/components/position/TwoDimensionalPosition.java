@@ -2,13 +2,13 @@ package e1.components.position;
 
 import e1.Pair;
 
-public abstract class AbstractTwoDimensionalPosition<X> implements Position{
+public class TwoDimensionalPosition<X> implements Position{
 
-    protected X x;
+    private X x;
 
-    protected X y;
+    private X y;
 
-    public AbstractTwoDimensionalPosition(X x, X y) {
+    public TwoDimensionalPosition(X x, X y) {
         this.x = x;
         this.y = y;
     }
@@ -30,5 +30,7 @@ public abstract class AbstractTwoDimensionalPosition<X> implements Position{
     }
 
     @Override
-    public abstract Object getCoordinates();
+    public Object getCoordinates() {
+        return new Pair<>(x,y);
+    }
 }
