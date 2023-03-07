@@ -3,17 +3,24 @@ package e1;
 import e1.components.pawn.Pawn;
 import e1.components.pawn.PawnFactory;
 import e1.components.pawn.PawnFactoryImpl;
+import e1.components.position.Position;
+import e1.components.position.TwoDimensionalPositionImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 abstract class PawnTest {
+
+    private static final int X = 0;
+    private static final int Y = 0;
+
 
     protected Pawn pawn;
 
     protected PawnFactory pawnFactory;
 
-    protected final static Pair<Integer,Integer> INITIAL_POSITION = new Pair<>(0,0);
+    protected final Position initialPosition = new TwoDimensionalPositionImpl(X,Y);
 
     @BeforeEach
     void initFactory() {
@@ -22,6 +29,6 @@ abstract class PawnTest {
 
     @Test
     void testInitialStaticPosition() {
-        assertEquals(INITIAL_POSITION,this.pawn.position());
+        assertEquals(initialPosition.getCoordinates(),this.pawn.position());
     }
 }
