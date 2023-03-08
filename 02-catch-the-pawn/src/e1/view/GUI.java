@@ -1,7 +1,7 @@
 package e1.view;
 
 import e1.controller.Logics;
-import e1.controller.LogicsImpl;
+//import e1.controller.LogicsImpl;
 import e1.model.elements.Pair;
 
 import javax.swing.*;
@@ -14,11 +14,11 @@ public class GUI extends JFrame {
     
     private static final long serialVersionUID = -6218820567019985015L;
     private final Map<JButton, Pair<Integer,Integer>> buttons = new HashMap<>();
-    private final Logics logics;
+//    private final Logics logics;
     private final static int SIZE = 5;
     
     public GUI() {
-        this.logics = new LogicsImpl(SIZE);
+//        this.logics = new LogicsImpl(SIZE);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setSize(100*SIZE, 100*SIZE);
         
@@ -28,11 +28,11 @@ public class GUI extends JFrame {
         ActionListener al = (e)->{
             final JButton bt = (JButton)e.getSource();
             final Pair<Integer,Integer> pos = buttons.get(bt);
-            if (logics.hit(pos.getX(),pos.getY())) {
-            	System.exit(0);
-            } else {
-                draw();            	
-            }
+//            if (logics.hit(pos.getX(),pos.getY())) {
+//            	System.exit(0);
+//            } else {
+//                draw();
+//            }
         };
                 
         for (int i=0; i<SIZE; i++){
@@ -49,9 +49,9 @@ public class GUI extends JFrame {
     
     private void draw() {
     	for (Entry<JButton,Pair<Integer,Integer>> entry: this.buttons.entrySet()) {
-    		String str = logics.hasPawn(entry.getValue().getX(), entry.getValue().getY()) ? "*" :
-    					 logics.hasKnight(entry.getValue().getX(), entry.getValue().getY()) ? "K" : " ";
-    		entry.getKey().setText(str);
+//    		String str = logics.hasPawn(entry.getValue().getX(), entry.getValue().getY()) ? "*" :
+//    					 logics.hasKnight(entry.getValue().getX(), entry.getValue().getY()) ? "K" : " ";
+//    		entry.getKey().setText(str);
     	}
     }
     

@@ -1,8 +1,6 @@
-package e1.components.position;
+package e1.model.elements.position;
 
 import e1.model.elements.Pair;
-import e1.model.elements.position.CartesianPosition;
-import e1.model.elements.position.CartesianPositionImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -35,7 +33,6 @@ class CartesianPositionTest {
         this.twoDimensionalPosition.setX(2);
         assertEquals(2,this.twoDimensionalPosition.getX());
     }
-
 
     @Test
     void testGetY() {

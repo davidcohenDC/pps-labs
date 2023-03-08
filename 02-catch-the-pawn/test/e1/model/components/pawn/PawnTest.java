@@ -1,8 +1,5 @@
-package e1.components.pawn;
+package e1.model.components.pawn;
 
-import e1.model.components.pawn.Pawn;
-import e1.model.components.pawn.PawnFactory;
-import e1.model.components.pawn.PawnFactoryImpl;
 import e1.model.elements.position.CartesianPosition;
 import e1.model.elements.position.CartesianPositionImpl;
 import org.junit.jupiter.api.BeforeEach;
@@ -29,4 +26,5 @@ abstract class PawnTest {
     void testInitialStaticPosition() {
         assertEquals(position.getCoordinates(),this.pawn.position().getCoordinates());
     }
+
 }
