@@ -11,7 +11,6 @@ import java.util.stream.Collectors;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class BoardTest {
-
     private static final int SIZE = 5;
     private static final int MINES = 3;
     private Board board;
@@ -33,6 +32,11 @@ public class BoardTest {
 
     @Test
     void testGetMines() {
+        assertEquals(MINES,this.board.getMines().size());
+    }
+
+    @Test
+    void testMinesPositions() {
         assertTrue(this.board.getMines()
                 .stream()
                 .allMatch(mine -> mine.getX() <= SIZE && mine.getY() <= SIZE));
