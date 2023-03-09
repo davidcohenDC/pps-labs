@@ -1,11 +1,13 @@
 package e2;
 
+import e2.model.Board;
+import e2.model.BoardImpl;
+
 import javax.swing.*;
 import javax.swing.event.MouseInputAdapter;
 import javax.swing.event.MouseInputListener;
 
 import java.util.*;
-import java.util.Map.Entry;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -15,8 +17,11 @@ public class GUI extends JFrame {
     private static final long serialVersionUID = -6218820567019985015L;
     private final Map<JButton,Pair<Integer,Integer>> buttons = new HashMap<>();
     private final Logics logics;
+
+    private Board board;
     
-    public GUI(int size) {
+    public GUI(int size, int mines) {
+        this.board = new BoardImpl(size,mines);
         this.logics = new LogicsImpl(size);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setSize(100*size, 100*size);

@@ -1,8 +1,14 @@
 package e2.model;
 
-public interface Board {
-    int size();
+import e1.model.elements.Pair;
 
-    int getMines();
+import java.util.List;
+
+public interface Board {
+    int getSize();
+
+    int getMinesSize();
+
+    List<Pair<Integer,Integer>> getMines();
 
 }
