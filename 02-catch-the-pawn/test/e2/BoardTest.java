@@ -9,16 +9,21 @@ import static org.junit.jupiter.api.Assertions.*;
 public class BoardTest {
 
     private static final int SIZE = 5;
+    private static final int MINES = 5;
     private Board board;
 
     @BeforeEach
     void setUp() {
-        this.board = new BoardImpl();
+        this.board = new BoardImpl(SIZE,MINES);
     }
 
     @Test
-    void testBoardGeneration() {
-        this.board = new BoardImpl(SIZE);
+    void testBoardSize() {
         assertEquals(SIZE, this.board.size());
+    }
+
+    @Test
+    void testBoardBombs() {
+        assertEquals(MINES, this.board.getMines());
     }
 }
