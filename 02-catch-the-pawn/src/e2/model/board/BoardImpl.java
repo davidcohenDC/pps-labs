@@ -1,9 +1,6 @@
-package e2.model;
+package e2.model.board;
 
 import e1.model.elements.Pair;
-import e1.model.elements.position.CartesianPosition;
-import e1.model.elements.position.CartesianPositionImpl;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;

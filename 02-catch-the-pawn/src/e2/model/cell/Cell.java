@@ -1,4 +1,4 @@
-package e2.model;
+package e2.model.cell;
 
 public interface Cell {
 }

@@ -1,7 +1,7 @@
 package e2;
 
-import e2.model.Cell;
-import e2.model.CellImpl;
+import e2.model.cell.Cell;
+import e2.model.cell.CellImpl;
 import org.junit.jupiter.api.BeforeEach;
 
 

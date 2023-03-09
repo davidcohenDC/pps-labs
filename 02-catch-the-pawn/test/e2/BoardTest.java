@@ -1,8 +1,8 @@
 package e2;
 
 import e1.model.elements.Pair;
-import e2.model.Board;
-import e2.model.BoardImpl;
+import e2.model.board.Board;
+import e2.model.board.BoardImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.HashSet;

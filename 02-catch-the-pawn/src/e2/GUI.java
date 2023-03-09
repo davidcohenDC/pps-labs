@@ -1,7 +1,9 @@
 package e2;
 
-import e2.model.Board;
-import e2.model.BoardImpl;
+import e2.controller.Logics;
+import e2.controller.LogicsImpl;
+import e2.model.board.Board;
+import e2.model.board.BoardImpl;
 
 import javax.swing.*;
 import javax.swing.event.MouseInputAdapter;
