@@ -1,4 +1,4 @@
-package e2;
+package e2.model;
 
 import e1.model.elements.Pair;
 import e2.model.board.Board;

@@ -1,4 +1,4 @@
-package e2;
+package e2.model;
 
 import e2.model.cell.Cell;
 import e2.model.cell.CellImpl;
@@ -13,6 +13,5 @@ public class CellTest {
     void setUp() {
         this.cell = new CellImpl();
     }
-
 
 }
