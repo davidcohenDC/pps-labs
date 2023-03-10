@@ -1,6 +1,6 @@
 package e2.model.board;
 
-import e1.model.elements.Pair;
+import e2.Pair;
 import java.util.List;
 
 public interface Board {

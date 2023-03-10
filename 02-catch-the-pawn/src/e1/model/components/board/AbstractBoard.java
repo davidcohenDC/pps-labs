@@ -5,11 +5,9 @@ import java.util.List;
 
 public abstract class AbstractBoard implements Board {
 
-    protected int size;
     protected List<Pawn> pawns;
 
-    public AbstractBoard(int size, List<Pawn> pawns) {
-        this.size = size;
+    public AbstractBoard(List<Pawn> pawns) {
         this.pawns = pawns;
     }
 

@@ -3,15 +3,22 @@ package e2.model;
 import e2.model.cell.Cell;
 import e2.model.cell.CellImpl;
 import org.junit.jupiter.api.BeforeEach;
-
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CellTest {
 
     private Cell cell;
 
+    private static final int VALUE = 3;
+
     @BeforeEach
     void setUp() {
-        this.cell = new CellImpl();
+        this.cell = new CellImpl(VALUE);
     }
 
+    @Test
+    void testGetValue() {
+       assertEquals(VALUE,this.cell.getCounter());
+    }
 }

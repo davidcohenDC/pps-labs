@@ -11,6 +11,8 @@ public class PawnFactoryImpl implements PawnFactory {
         return new AbstractPawn(PAWN_TYPE.PAWN, position) {
             @Override
             protected boolean canMove(CartesianPosition<Integer> position) {
+                position.setX(position.getX()-this.actualPosition.getX());
+                position.setY(position.getY()-this.actualPosition.getY());
                 return Math.abs(position.getX())+Math.abs(position.getY())==1;
             }
         };
@@ -21,6 +23,8 @@ public class PawnFactoryImpl implements PawnFactory {
         return new AbstractPawn(PAWN_TYPE.KNIGHT, position) {
             @Override
             protected boolean canMove(CartesianPosition<Integer> position) {
+                position.setX(position.getX()-this.actualPosition.getX());
+                position.setY(position.getY()-this.actualPosition.getY());
                 return Math.abs(position.getX())+Math.abs(position.getY())==3;
             }
         };

@@ -2,19 +2,19 @@ package e1.model.components.board;
 
 import e1.model.components.pawn.Pawn;
 import e1.model.elements.position.CartesianPosition;
-import e1.model.utils.PAWN_TYPE;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 public class BoardImpl extends AbstractBoard {
 
-    public BoardImpl(int size, List<Pawn> pawns) {
-        super(size, pawns);
+    public BoardImpl(List<Pawn> pawns) {
+        super(pawns);
     }
 
     @Override
     public Optional<Pawn> getPawnByPosition(CartesianPosition<Integer> position) {
-        return this.pawns.stream().filter(pawn -> pawn.position() == position).findFirst();
+        return this.pawns.stream().filter(pawn -> pawn.position().getX() == position.getX() && pawn.position().getY() == position.getY()).findFirst();
     }
 
     @Override

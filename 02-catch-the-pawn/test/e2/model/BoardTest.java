@@ -1,6 +1,6 @@
 package e2.model;
 
-import e1.model.elements.Pair;
+import e2.Pair;
 import e2.model.board.Board;
 import e2.model.board.BoardImpl;
 import org.junit.jupiter.api.BeforeEach;
