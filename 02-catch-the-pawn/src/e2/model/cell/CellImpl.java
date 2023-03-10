@@ -2,7 +2,9 @@ package e2.model.cell;
 
 public class CellImpl implements Cell {
 
-    private int counter;
+    private final int counter;
+
+    private boolean flag;
 
 
     public CellImpl(int counter) {
@@ -12,6 +14,16 @@ public class CellImpl implements Cell {
     @Override
     public int getCounter() {
         return this.counter;
+    }
+
+    @Override
+    public boolean isFlag() {
+        return this.flag;
+    }
+
+    @Override
+    public void toggleFlag() {
+        this.flag = !this.flag;
     }
 
 }

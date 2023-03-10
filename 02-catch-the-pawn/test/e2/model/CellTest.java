@@ -21,4 +21,13 @@ public class CellTest {
     void testGetValue() {
        assertEquals(VALUE,this.cell.getCounter());
     }
+
+    @Test
+    void testSetFlag() {
+        assertFalse(this.cell.isFlag());
+        this.cell.toggleFlag();
+        assertTrue(this.cell.isFlag());
+        this.cell.toggleFlag();
+        assertFalse(this.cell.isFlag());
+    }
 }
