@@ -12,6 +12,8 @@ public class LogicsTest {
     private static final int SIZE = 5;
     private static final int MINES = 3;
 
+    private final Pair<Integer,Integer> FLAG_POSITION = new Pair<>(1,0);
+
     private Logics logics;
 
     private Board board;
@@ -30,9 +32,14 @@ public class LogicsTest {
         }
     }
 
+//    @Test
+//    void testToggleFlag() {
+//        assertFalse(this.logics.isFlag(FLAG_POSITION));
+//        this.logics.toggleFlag(FLAG_POSITION);
+//        assertTrue(this.logics.isFlagged(FLAG_POSITION));
+//    }
     @Test
-    void testFlag() {
-        Pair<Integer,Integer> position = new Pair<>(0,0);
-        this.logics.flag(position);
+    void testIsFlag() {
+        assertFalse(this.logics.isFlag(FLAG_POSITION));
     }
 }

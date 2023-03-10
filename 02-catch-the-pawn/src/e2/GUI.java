@@ -55,7 +55,7 @@ public class GUI extends JFrame {
                 final JButton bt = (JButton)e.getSource();
                 if (bt.isEnabled()){
                     final Pair<Integer,Integer> pos = buttons.get(bt);
-                    logics.flag(pos);
+//                    logics.flag(pos);
                 }
                 drawBoard(); 
             }

@@ -6,7 +6,5 @@ public interface Cell {
 
     boolean isFlag();
 
-//    void setFlag(boolean b);
-
     void toggleFlag();
 }

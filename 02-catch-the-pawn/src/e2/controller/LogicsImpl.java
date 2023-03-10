@@ -18,7 +18,22 @@ public class LogicsImpl implements Logics {
     }
 
     @Override
-    public void flag(Pair<Integer, Integer> position) {
+    public void toggleFlag(Pair<Integer, Integer> position) {
+//
+    }
 
+    @Override
+    public boolean isFlagged(Pair<Integer, Integer> position) {
+        return false;
+    }
+//
+//    @Override
+//    public boolean isFlagged(Pair<Integer, Integer> position) {
+//        return this.board.getFlag(position).isPresent();
+//    }
+
+    @Override
+    public boolean isFlag(Pair<Integer, Integer> flagPosition) {
+        return false;
     }
 }

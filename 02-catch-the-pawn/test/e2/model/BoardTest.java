@@ -50,4 +50,9 @@ public class BoardTest {
                 .filter(n -> !items.add(n))
                 .collect(Collectors.toSet()).size());
     }
+
+    @Test
+    void testGetCell() {
+
+    }
 }
