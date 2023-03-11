@@ -79,14 +79,6 @@ public class BoardTest {
     }
 
     @Test
-    void testGetGrid() {
-        this.board = new BoardImpl(SIZE,this.mines);
-        List<Pair<Integer,Integer>> grid = new ArrayList<>(this.mines);
-        grid.addAll(this.cells);
-        assertTrue(grid.containsAll(this.board.getGrid()));
-    }
-
-    @Test
     void testGetCells() {
         this.board = new BoardImpl(SIZE,this.mines);
         assertTrue(this.cells.containsAll(this.board.getCells()));

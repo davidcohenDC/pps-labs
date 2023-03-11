@@ -2,6 +2,7 @@ package e2.model.board;
 
 import e2.Pair;
 import e2.model.box.Box;
+import e2.model.box.Cell;
 import e2.model.box.Mine;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -117,7 +118,7 @@ public class BoardImpl implements Board{
     public List<Pair<Integer, Integer>> getCells() {
         return this.grid.keySet()
                 .stream()
-                .filter(key -> !this.mines.containsKey(key)).toList();
+                .filter(key -> key.getClass().isInstance(Cell.class)).toList();
     }
 
     @Override
