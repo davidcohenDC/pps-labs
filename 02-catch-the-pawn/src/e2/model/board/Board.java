@@ -11,9 +11,22 @@ public interface Board {
 
     List<Pair<Integer,Integer>> getMines();
 
-    void setFlag(Pair<Integer,Integer> position);
+    List<Pair<Integer,Integer>> getCells();
 
-//    Optional<Pair<Integer,Integer>> getFlag(Pair<Integer,Integer> position);
+    List<Pair<Integer,Integer>> getGrid();
+
+    List<Optional<Integer>> getBoxValues();
+
+    List<Boolean> getTriggers();
+
+    void setFlag(Pair<Integer,Integer> position, boolean flag);
+
+    boolean getFlag(Pair<Integer,Integer> position);
+
+    void activateTrigger(Pair<Integer,Integer> position);
+
+    boolean isTrigger(Pair<Integer,Integer> position);
+
 
 
 }
