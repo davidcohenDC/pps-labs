@@ -1,6 +1,6 @@
 package u02
 
-object Optionals extends App:
+object Optionals extends App :
 
   enum Option[A]:
     case Some(a: A)
@@ -21,6 +21,7 @@ object Optionals extends App:
       case _ => None()
 
   import Option.*
+
   val s1: Option[Int] = Some(1)
   val s2: Option[Int] = Some(2)
   val s3: Option[Int] = None()

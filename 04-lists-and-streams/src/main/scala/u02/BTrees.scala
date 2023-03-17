@@ -1,6 +1,6 @@
 package u02
 
-object BTrees extends App:
+object BTrees extends App :
 
   // A custom and generic binary tree of elements of type A
   enum Tree[A]:
@@ -18,10 +18,11 @@ object BTrees extends App:
 
     def count[A](t: Tree[A], elem: A): Int = t match
       case Branch(l, r) => count(l, elem) + count(r, elem)
-      case Leaf(e) if e == elem => 1
+      case Leaf(e) if (e == elem) => 1
       case _ => 0
 
   import Tree.*
+
   val tree = Branch(Branch(Leaf(1), Leaf(2)), Leaf(1))
   println(tree) // Branch(Branch(Leaf(1),Leaf(2)),Leaf(1))
   println(size(tree)) // ..,3

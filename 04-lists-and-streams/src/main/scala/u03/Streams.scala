@@ -1,6 +1,6 @@
 package u03
 
-object Streams extends App:
+object Streams extends App :
 
   import Lists.*
 
@@ -26,7 +26,7 @@ object Streams extends App:
       case _ => Empty()
 
     def filter[A](stream: Stream[A])(pred: A => Boolean): Stream[A] = stream match
-      case Cons(head, tail) if pred(head()) => cons(head(), filter(tail())(pred))
+      case Cons(head, tail) if (pred(head())) => cons(head(), filter(tail())(pred))
       case Cons(head, tail) => filter(tail())(pred)
       case _ => Empty()
 
@@ -37,7 +37,6 @@ object Streams extends App:
     def iterate[A](init: => A)(next: A => A): Stream[A] =
       cons(init, iterate(next(init))(next))
 
-  // TODO: def drop(....)
   end Stream
 
   // var simplifies chaining of functions a bit..

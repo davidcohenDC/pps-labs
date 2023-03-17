@@ -1,6 +1,6 @@
 package u03
 
-object EncapsulatedLists extends App:
+object EncapsulatedLists extends App :
 
   // A generic linkedlist with encapsulated state
   enum List[E]:

@@ -19,6 +19,6 @@ object CaseMatch extends App:
   println(f(0)) // zero
   // f(-1) raises a scala.MatchError
 
-  val g: Int => String = { case n if n > 0 => "pos" } // single line
+  val g: Int => String = { case n if n > 0 => "pos" } // 1-liner
   println(g(1)) // pos
-// g(0) raises a scala.MatchError
+  // g(0) raises a scala.MatchError

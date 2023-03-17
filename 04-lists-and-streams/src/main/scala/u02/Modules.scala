@@ -1,6 +1,6 @@
 package u02
 
-object Modules extends App:
+object Modules extends App :
 
   // An ADT: type + module
   enum Person:
@@ -15,6 +15,7 @@ object Modules extends App:
   println(Person.name(Person.Student("mario", 2015)))
 
   import Person.*
+
   println(name(Student("mario", 2015)))
 
   // a method outside the Person module

@@ -1,6 +1,6 @@
 package u02
 
-object AlgebraicDataTypes extends App:
+object AlgebraicDataTypes extends App :
 
   enum Person: // a sum type defined by enumerating various cases
     case Student(name: String, year: Int)
@@ -27,4 +27,4 @@ object AlgebraicDataTypes extends App:
     case IntList.Cons(h, t) => h + sum(t)
     case _ => 0
 
-  println(sum(IntList.Cons(10, IntList.Cons(20, IntList.Cons(30, IntList.Nil)))))
+  println(sum(IntList.Cons(10, IntList.Cons(20, IntList.Nil))))

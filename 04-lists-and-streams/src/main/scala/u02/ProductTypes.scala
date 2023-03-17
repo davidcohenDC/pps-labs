@@ -1,9 +1,10 @@
 package u02
 
-object ProductTypes extends App:
+object ProductTypes extends App :
 
   // Product types, aka, records
   case class Point2D(x: Double, y: Double)
+
   println(Point2D(10, 20)) // Point2D(10.0,20.0)
 
   // using matching to declaratively create method body
