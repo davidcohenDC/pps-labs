@@ -1,0 +1,29 @@
+{
+  "branches": [
+    "main"
+  ],
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "git archive --format=zip --prefix=pps-labs-${nextRelease.version}/ -o pps-labs-${nextRelease.version}.zip HEAD"
+      }
+    ],
+    [
+      "@semantic-release/github",
+      {
+        "assets": [
+          {
+            "path": "pps-labs-*.zip",
+            "label": "Sources of the seven labs with the sbt build (unzip, then `sbt test`)"
+          }
+        ],
+        "successComment": false,
+        "failComment": false,
+        "failTitle": false
+      }
+    ]
+  ]
+}
